@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEAR Markets - UI</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="widget">
+    <h1 class="widget__title">Markets</h1>
+    <div class="widget__info">
+      <select class="widget__markets"></select>
+    </div>
+    <div class="widget__orders">
+      <div class="widget__orders__header">
+        <div>Price</div>
+        <div>Size</div>
+        <div>Total</div>
+      </div>
+      <div id="tableBody" class="widget__orders__item">
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/near-api-js@0.41.0/dist/near-api-js.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

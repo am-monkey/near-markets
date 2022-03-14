@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap');
+
+html {
+  background-color: #c8c8c8;
+  color: #fff;
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 768px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+}
+
+.widget {
+  margin-top: 40px;
+  width: 90%;
+  background: #23242F;
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.widget__info {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.widget__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  margin: 0 0 20px 0;
+}
+
+.widget__markets {
+  cursor: pointer;
+  color: #fff;
+  width: 170px;
+  line-height: 1;
+  border: 1px solid #626372;
+  padding: 0 15px;
+  border-radius: 10px;
+  -webkit-appearance: none;
+  height: 40px;
+  background-image: linear-gradient(45deg, transparent 50%, white 50%), linear-gradient(135deg, white 50%, transparent 50%), linear-gradient(to right, #2a2d46, #2a2d46);
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
+  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+  background-repeat: no-repeat;
+  background-color: #2b2d46;
+}
+
+.widget__orders {
+  flex-grow: 1;
+  background: #000;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.widget__orders__header {
+  display: flex;
+  justify-content: space-around;
+  background: #515151;
+  border-radius: 5px;
+  padding: 5px 0;
+}
+
+.widget__orders__header div {
+  width: 30%;
+}
+
+.widget__orders__item {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #444;
+  padding: 5px 0;
+  font-weight: 300;
+}
+
+.widget__orders__item div {
+  width: 30%;
+}
