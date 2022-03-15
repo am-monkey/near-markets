@@ -74,6 +74,7 @@ body {
 
 .widget__orders__header div {
   width: 30%;
+  text-align: left;
 }
 
 .widget__orders__item {
@@ -86,4 +87,19 @@ body {
 
 .widget__orders__item div {
   width: 30%;
+}
+
+.ask-orders {
+  background: #6addb4;
+  color: #333;
+  text-align: center;
+  border-radius: 4px;
+  width: 100% !important;
+}
+
+.bid-orders {
+  background: #c44f73;
+  text-align: center;
+  border-radius: 4px;
+  width: 100% !important;
 }

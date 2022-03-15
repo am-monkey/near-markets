@@ -34,16 +34,30 @@ async function viewMarkets(id) {
   const markets = await contract.view_market({
     "market_id": id
   })
-  const marketsTable = document.querySelector('.widget__orders__header');
-  markets.ask_orders.forEach(el => {
-    el = '<div class="widget__orders__item"><div>' + formatExponential(el.price) + '</div><div>' + formatExponential(el.quantity) + '</div><div>' + (formatExponential(el.price) * formatExponential(el.quantity)).toFixed(2) + '</div></div>'
-    marketsTable.insertAdjacentHTML('afterend', el);
-  });
 
-  markets.bid_orders.forEach(el => {
-    el = '<div class="widget__orders__item"><div>' + formatExponential(el.price) + '</div><div>' + formatExponential(el.quantity) + '</div><div>' + (formatExponential(el.price) * formatExponential(el.quantity)).toFixed(2) + '</div></div>'
-    marketsTable.insertAdjacentHTML('afterend', el);
-  });
+  console.log(markets)
+  fillData(markets.ask_orders, markets.bid_orders);
+}
+
+function fillData(ask, bid) {
+  const marketsTable = document.querySelector('.widget__orders');
+  marketsTable.innerHTML = '';
+  for (let i = 0; i < arguments.length; i++) {
+    arguments[i].forEach(el => {
+      el = '<div class="widget__orders__item"><div>' + formatExponential(el.price) + '</div><div>' + formatExponential(el.quantity) + '</div><div>' + (formatExponential(el.price) * formatExponential(el.quantity)).toFixed(2) + '</div></div>'
+      marketsTable.insertAdjacentHTML('afterbegin', el);
+    });
+
+    // dividers
+    if (i === 1) {
+      el = ' <div class="widget__orders__item"><div class="ask-orders">Ask orders</div></div>';
+      marketsTable.insertAdjacentHTML('afterbegin', el);
+    }
+    if (i === arguments.length - 2) {
+      el = '<div class="widget__orders__item"><div class="bid-orders">Bid orders</div></div>';
+      marketsTable.insertAdjacentHTML('afterbegin', el);
+    }
+  }
 }
 
 function formatExponential(number) {
